@@ -105,16 +105,16 @@
   (mccp_chrono_t)((((nsec) / 100LL) + 5LL) / 10LL)
 
 #define NSEC_TO_TS(nsec, ts) \
-  do {                                                              \
+  do {                                                            \
     (ts).tv_sec = (time_t)((nsec) / (1000LL * 1000LL * 1000LL));  \
     (ts).tv_nsec = (long)((nsec) % (1000LL * 1000LL * 1000LL));   \
   } while (0)
 
-#define NSEC_TO_TV(nsec, tv)                                      \
-  do {                                                            \
-    mccp_chrono_t __u_sec__ = NSEC_TO_USEC(nsec);              \
-    (tv).tv_sec = (long)((__u_sec__) / (1000LL * 1000LL));      \
-    (tv).tv_usec = (long)((__u_sec__) % (1000LL * 1000LL));     \
+#define NSEC_TO_TV(nsec, tv)                                           \
+  do {                                                                 \
+    mccp_chrono_t __u_sec__ = NSEC_TO_USEC(nsec);                      \
+    (tv).tv_sec = (long)((__u_sec__) / (1000LL * 1000LL));             \
+    (tv).tv_usec = (suseconds_t)((__u_sec__) % (1000LL * 1000LL));     \
   } while (0)
 
 #define TS_TO_NSEC(ts) \
