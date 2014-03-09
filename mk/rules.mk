@@ -294,6 +294,7 @@ libtool::	$(LIBTOOL_DEPS)
 	fi
 endif
 
-
-$(DEP_MCCP_UTIL_LIB)::
-	(cd $(BUILD_LIBDIR) && $(MAKE) $(MCCP_UTIL_LIB))
+ifdef DEPLIBS_MK
+__DEPLIBS__=.rules.
+include $(DEPLIBS_MK)
+endif

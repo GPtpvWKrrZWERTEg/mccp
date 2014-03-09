@@ -34,7 +34,6 @@ INSTALL_PROGRAM	= @INSTALL_PROGRAM@
 
 BUILD_SRCDIR	= $(TOPDIR)/src
 BUILD_INCDIR	= $(BUILD_SRCDIR)/include
-BUILD_LIBDIR	= $(BUILD_SRCDIR)/lib
 
 SITECONF_MK	?=	$(shell ls $(MKRULESDIR)/siteconf.mk 2>/dev/null)
 ifdef SITECONF_MK
@@ -42,8 +41,11 @@ __SITECONF__=.pre.
 include $(SITECONF_MK)
 endif
 
-MCCP_UTIL_LIB		= libmccp_util.la
-DEP_MCCP_UTIL_LIB	= $(BUILD_LIBDIR)/$(MCCP_UTIL_LIB)
+DEPLIBS_MK	?=	$(shell ls $(MKRULESDIR)/deplibs.mk 2>/dev/null)
+ifdef DEPLIBS_MK
+__DEPLIBS__=.vars.
+include $(DEPLIBS_MK)
+endif
 
 CPPFLAGS	+= @OS_CPPFLAGS@ -I$(BUILD_INCDIR)
 
