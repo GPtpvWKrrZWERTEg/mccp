@@ -20,4 +20,4 @@ mccp_heapcheck_is_mallocd(const void *addr);
 
 
 
-#endif /* __MCCP_HEAPCHECK_H__ */
+#endif /* ! __MCCP_HEAPCHECK_H__ */

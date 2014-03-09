@@ -17,4 +17,4 @@
 
 
 
-#endif /* __MCCP_PERROR_H__ */
+#endif /* ! __MCCP_PERROR_H__ */

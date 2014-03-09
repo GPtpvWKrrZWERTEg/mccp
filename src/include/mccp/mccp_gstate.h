@@ -173,4 +173,4 @@ void	mccp_global_state_reset(void);
 
 
 
-#endif /* __MCCP_GSTATE_H__ */
+#endif /* ! __MCCP_GSTATE_H__ */

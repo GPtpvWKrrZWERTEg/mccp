@@ -75,4 +75,4 @@ typedef struct mccp_pipeline_stage_record {
 
 
 
-#endif /* __MCCP_PIPELINE_STAGE_INTERNAL_H__ */
+#endif /* ! __MCCP_PIPELINE_STAGE_INTERNAL_H__ */

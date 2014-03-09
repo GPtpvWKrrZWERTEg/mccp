@@ -220,4 +220,4 @@ typedef mccp_result_t
 
 
 
-#endif /* __MCCP_PIPELINE_STAGE_FUNCS_H__ */
+#endif /* ! __MCCP_PIPELINE_STAGE_FUNCS_H__ */

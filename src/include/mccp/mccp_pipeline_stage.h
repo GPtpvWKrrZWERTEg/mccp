@@ -279,4 +279,4 @@ mccp_pipeline_stage_find(const char *name,
                          mccp_pipeline_stage_t *retptr);
 
 
-#endif /* __MCCP_PIPELINE_STAGE_H__ */
+#endif /* ! __MCCP_PIPELINE_STAGE_H__ */

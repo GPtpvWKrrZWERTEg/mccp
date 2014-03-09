@@ -136,4 +136,4 @@ mccp_result_t
 mccp_barrier_wait(mccp_barrier_t *bptr, bool *is_master);
 
 
-#endif /* __MCCP_LOCK_H__ */
+#endif /* ! __MCCP_LOCK_H__ */

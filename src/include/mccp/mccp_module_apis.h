@@ -264,4 +264,4 @@ mccp_module_find(const char *name);
 
 
 
-#endif /* __MCCP_MODULE_APIS_H__ */
+#endif /* ! __MCCP_MODULE_APIS_H__ */
