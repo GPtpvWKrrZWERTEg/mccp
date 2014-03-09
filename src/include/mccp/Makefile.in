@@ -10,4 +10,4 @@ INSTALL_HEADER_TARGETS	= mccp_config.h mccp_platform.h
 include $(MKRULESDIR)/rules.mk
 
 distclean::
-	$(RM) mccp_config.h mccp_platform.h *.new *.bak
+	$(RM) mccp_config.h mccp_platform.h mccp_sysdep.h *.new *.bak

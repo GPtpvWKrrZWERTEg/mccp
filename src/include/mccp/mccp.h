@@ -7,6 +7,7 @@
 
 #include <mccp/mccp_includes.h>
 #include <mccp/mccp_types.h>
+#include <mccp/mccp_sysdep.h>
 #include <mccp/mccp_error.h>
 #include <mccp/mccp_macros.h>
 #include <mccp/mccp_logger.h>

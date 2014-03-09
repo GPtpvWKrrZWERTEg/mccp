@@ -637,6 +637,8 @@ OS_LIBS
 OS_LDFLAGS
 OS_CFLAGS
 OS_CPPFLAGS
+SYSDEP_SRCS
+SYSDEP_HEADER
 MAKE
 STAT
 GMP_LIBS
@@ -16420,6 +16422,8 @@ case $CPU in
         CPU=i386;;
 esac
 
+SYSDEP_HEADER=mccp_sysdep_posix.h
+SYSDEP_SRCS=''
 OS_CPPFLAGS='-D_REENTRANT'
 OS_LDFLAGS=''
 OS_LIBS=''
@@ -16451,10 +16455,13 @@ case $OS in
     darwin*)
 	ECHO_N='/bin/echo -n'
 	STAT='stat -f %p'
+	SYSDEP_HEADER=mccp_sysdep_darwin.h
 	OS_CPPFLAGS="${OS_CPPFLAGS} -D_GNU_SOURCE -D_DARWIN_C_SOURCE"
 	OS_LIBS="-lpthread"
 	OS=darwin;;
 esac
+
+
 
 
 
@@ -16479,7 +16486,7 @@ CFLAGS=''
 
 
 # emit.
-ac_config_files="$ac_config_files mk/changeincludes mk/changename mk/doDosText.sh mk/initdepend mk/vars.mk Makefile src/include/mccp/Makefile src/include/mccp/mccp_platform.h src/lib/Makefile src/lib/check/Makefile"
+ac_config_files="$ac_config_files mk/changeincludes mk/changename mk/doDosText.sh mk/initdepend mk/vars.mk Makefile src/include/mccp/Makefile src/include/mccp/mccp_platform.h src/include/mccp/mccp_sysdep.h src/lib/Makefile src/lib/check/Makefile"
 
 
 ac_config_commands="$ac_config_commands modify-config"
@@ -17578,6 +17585,7 @@ do
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/include/mccp/Makefile") CONFIG_FILES="$CONFIG_FILES src/include/mccp/Makefile" ;;
     "src/include/mccp/mccp_platform.h") CONFIG_FILES="$CONFIG_FILES src/include/mccp/mccp_platform.h" ;;
+    "src/include/mccp/mccp_sysdep.h") CONFIG_FILES="$CONFIG_FILES src/include/mccp/mccp_sysdep.h" ;;
     "src/lib/Makefile") CONFIG_FILES="$CONFIG_FILES src/lib/Makefile" ;;
     "src/lib/check/Makefile") CONFIG_FILES="$CONFIG_FILES src/lib/check/Makefile" ;;
     "modify-config") CONFIG_COMMANDS="$CONFIG_COMMANDS modify-config" ;;
@@ -18978,6 +18986,12 @@ _LT_EOF
 		mk/initdepend
  ;;
     "src/include/mccp/mccp_platform.h":F) chmod 755 \
+		mk/changeincludes \
+		mk/changename \
+		mk/doDosText.sh \
+		mk/initdepend
+ ;;
+    "src/include/mccp/mccp_sysdep.h":F) chmod 755 \
 		mk/changeincludes \
 		mk/changename \
 		mk/doDosText.sh \

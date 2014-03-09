@@ -1,0 +1,14 @@
+#ifndef __MCCP_SYSDEP_H__
+#define __MCCP_SYSDEP_H__
+
+
+
+
+
+#include <mccp/sysdep/@SYSDEP_HEADER@>
+
+
+
+
+
+#endif /* __MCCP_SYSDEP_H__ */

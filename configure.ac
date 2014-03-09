@@ -190,6 +190,8 @@ case $CPU in
         CPU=i386;;
 esac
 
+SYSDEP_HEADER=mccp_sysdep_posix.h
+SYSDEP_SRCS=''
 OS_CPPFLAGS='-D_REENTRANT'
 OS_LDFLAGS=''
 OS_LIBS=''
@@ -221,6 +223,7 @@ case $OS in
     darwin*)
 	ECHO_N='/bin/echo -n'
 	STAT='stat -f %p'
+	SYSDEP_HEADER=mccp_sysdep_darwin.h
 	OS_CPPFLAGS="${OS_CPPFLAGS} -D_GNU_SOURCE -D_DARWIN_C_SOURCE"
 	OS_LIBS="-lpthread"
 	OS=darwin;;
@@ -229,6 +232,8 @@ esac
 AC_SUBST(ECHO_N)
 AC_SUBST(STAT)
 AC_SUBST(MAKE)
+AC_SUBST(SYSDEP_HEADER)
+AC_SUBST(SYSDEP_SRCS)
 AC_SUBST(OS_CPPFLAGS)
 AC_SUBST(OS_CFLAGS)
 AC_SUBST(OS_LDFLAGS)
@@ -260,6 +265,7 @@ AC_CONFIG_FILES(
 	Makefile
 	src/include/mccp/Makefile
 	src/include/mccp/mccp_platform.h
+	src/include/mccp/mccp_sysdep.h
 	src/lib/Makefile
 	src/lib/check/Makefile,
 	[chmod 755 \
