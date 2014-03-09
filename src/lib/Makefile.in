@@ -1,0 +1,20 @@
+TOPDIR		= @TOPDIR@
+MKRULESDIR	= @MKRULESDIR@
+
+TARGET_LIB		= $(MCCP_UTIL_LIB)
+INSTALL_LIB_TARGETS	= $(TARGET_LIB)
+INSTALL_LIB_DIR		= $(DEST_LIBDIR)
+
+SRCS =	error.c logger.c hashmap.c chrono.c lock.c thread.c \
+	strutils.c cbuffer.c qmuxer.c qpoll.c \
+	heapcheck.c signal.c pipeline_stage.c gstate.c module.c
+
+LDFLAGS	+=	@GMP_LIBS@
+
+TARGETS			= $(TARGET_LIB)
+
+DIRS	=	check
+
+include $(MKRULESDIR)/vars.mk
+include $(MKRULESDIR)/rules.mk
+include .depend

@@ -1,0 +1,22 @@
+TOPDIR		= @TOPDIR@
+MKRULESDIR	= @MKRULESDIR@
+
+include $(MKRULESDIR)/vars.mk
+
+DIRS	=	src/lib \
+		src/include/mccp
+
+include $(MKRULESDIR)/rules.mk
+
+clean::
+	$(RM) -r autom4te.cache config.log
+	find . -type f \( \
+		-name '*~' -o \
+		-name '*.core' -o \
+		-name 'vgcore.*' \
+	\) -exec rm -f {} \;
+
+distclean::	clean
+	$(RM) config.* ./libtool  mk/vars.mk \
+	mk/changeincludes mk/changename mk/doDosText.sh mk/initdepend
+
