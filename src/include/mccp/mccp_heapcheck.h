@@ -5,6 +5,9 @@
 
 
 
+__BEGIN_DECLS
+
+
 void
 mccp_heapcheck_module_initialize(void);
 
@@ -15,6 +18,9 @@ mccp_heapcheck_is_in_heap(const void *addr);
 bool
 mccp_heapcheck_is_mallocd(const void *addr);
 #endif
+
+
+__END_DECLS
 
 
 

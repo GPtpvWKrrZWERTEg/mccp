@@ -268,16 +268,18 @@ AC_CONFIG_FILES(
 	src/include/mccp/mccp_sysdep.h
 	src/lib/Makefile
 	src/lib/check/Makefile,
-	[chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend]
 )
 
 AC_CONFIG_COMMANDS([modify-config],
 	[sh mk/finalizeconfig ${OS_CPPFLAGS}],
 	[OS_CPPFLAGS="${OS_CPPFLAGS}"])
+
+AC_CONFIG_COMMANDS([chmod-utils],
+	[chmod 755 \
+		mk/changeincludes \
+		mk/changename \
+		mk/doDosText.sh \
+		mk/initdepend])
 
 AC_CONFIG_COMMANDS([depend],
 	[sh mk/initdepend && ${MAKE} depend],

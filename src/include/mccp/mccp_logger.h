@@ -35,6 +35,9 @@ typedef enum {
 
 
 
+__BEGIN_DECLS
+
+
 /**
  * Initialize the logger.
  *
@@ -141,6 +144,9 @@ void	mccp_log_emit(mccp_log_level_t log_level,
                     const char *func,
                     const char *fmt, ...)
 __attr_format_printf__(6, 7);
+
+
+__END_DECLS
 
 
 

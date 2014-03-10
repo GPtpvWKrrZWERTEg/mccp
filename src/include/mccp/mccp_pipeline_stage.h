@@ -28,6 +28,9 @@ typedef struct mccp_pipeline_stage_record *	mccp_pipeline_stage_t;
 
 
 
+__BEGIN_DECLS
+
+
 /**
  * Create a pipeline stage.
  *
@@ -262,7 +265,6 @@ mccp_pipeline_stage_maintenance(const mccp_pipeline_stage_t *sptr,
                                 void *arg);
 
 
-
 /**
  * Find a pipeline stage by name.
  *
@@ -277,6 +279,12 @@ mccp_pipeline_stage_maintenance(const mccp_pipeline_stage_t *sptr,
 mccp_result_t
 mccp_pipeline_stage_find(const char *name,
                          mccp_pipeline_stage_t *retptr);
+
+
+__END_DECLS
+
+
+
 
 
 #endif /* ! __MCCP_PIPELINE_STAGE_H__ */

@@ -1,6 +1,10 @@
 #ifndef __MCCP_PLATFORM_H__
 #define __MCCP_PLATFORM_H__
 
+
+
+
+
 #define @OSDEF@
 #define @CPUDEF@
 
@@ -17,5 +21,19 @@
 #else
 #error Sorry we can not live like this.
 #endif /* SIZEOF_LONG_INT == 8 || SIZEOF_LONG_INT == 4 */
+
+#if !defined(__BEGIN_DECLS) && !defined(__END_DECLS)
+#if defined(__cplusplus)
+#define __BEGIN_DECLS	extern "C" {
+#define __END_DECLS	}
+#else
+#define __BEGIN_DECLS
+#define __END_DECLS
+#endif /* __cplusplus */
+#endif /* ! __BEGIN_DECLS && ! __END_DECLS */
+
+
+
+
 
 #endif /* ! __MCCP_PLATFORM_H__ */

@@ -13,6 +13,9 @@
 
 
 
+__BEGIN_DECLS
+
+
 /**
  * A MT-Safe signal(2).
  */
@@ -25,6 +28,9 @@ mccp_signal(int signum, sighandler_t new, sighandler_t *oldptr);
  * semantics.
  */
 void	mccp_signal_old_school_semantics(void);
+
+
+__END_DECLS
 
 
 

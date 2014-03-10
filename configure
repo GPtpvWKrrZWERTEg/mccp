@@ -16492,6 +16492,9 @@ ac_config_files="$ac_config_files mk/changeincludes mk/changename mk/doDosText.s
 ac_config_commands="$ac_config_commands modify-config"
 
 
+ac_config_commands="$ac_config_commands chmod-utils"
+
+
 ac_config_commands="$ac_config_commands depend"
 
 
@@ -17589,6 +17592,7 @@ do
     "src/lib/Makefile") CONFIG_FILES="$CONFIG_FILES src/lib/Makefile" ;;
     "src/lib/check/Makefile") CONFIG_FILES="$CONFIG_FILES src/lib/check/Makefile" ;;
     "modify-config") CONFIG_COMMANDS="$CONFIG_COMMANDS modify-config" ;;
+    "chmod-utils") CONFIG_COMMANDS="$CONFIG_COMMANDS chmod-utils" ;;
     "depend") CONFIG_COMMANDS="$CONFIG_COMMANDS depend" ;;
     "config-clean") CONFIG_COMMANDS="$CONFIG_COMMANDS config-clean" ;;
 
@@ -18943,73 +18947,12 @@ compiler_lib_search_path=$lt_compiler_lib_search_path_CXX
 _LT_EOF
 
  ;;
-    "mk/changeincludes":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
-    "mk/changename":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
-    "mk/doDosText.sh":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
-    "mk/initdepend":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
-    "mk/vars.mk":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
-    "Makefile":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
-    "src/include/mccp/Makefile":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
-    "src/include/mccp/mccp_platform.h":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
-    "src/include/mccp/mccp_sysdep.h":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
-    "src/lib/Makefile":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
-    "src/lib/check/Makefile":F) chmod 755 \
-		mk/changeincludes \
-		mk/changename \
-		mk/doDosText.sh \
-		mk/initdepend
- ;;
     "modify-config":C) sh mk/finalizeconfig ${OS_CPPFLAGS} ;;
+    "chmod-utils":C) chmod 755 \
+		mk/changeincludes \
+		mk/changename \
+		mk/doDosText.sh \
+		mk/initdepend ;;
     "depend":C) sh mk/initdepend && ${MAKE} depend ;;
     "config-clean":C) rm -rf ./config.log ./config.status.* autom4te.cache ;;
 

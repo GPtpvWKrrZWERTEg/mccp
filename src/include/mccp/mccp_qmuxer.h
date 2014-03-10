@@ -36,6 +36,9 @@ typedef enum {
 
 
 
+__BEGIN_DECLS
+
+
 /**
  * Create a queue muxer.
  *
@@ -226,5 +229,12 @@ mccp_qmuxer_poll(mccp_qmuxer_t *qmxptr,
  */
 void
 mccp_qmuxer_cancel_janitor(mccp_qmuxer_t *qmxptr);
+
+
+__END_DECLS
+
+
+
+
 
 #endif  /* ! __MCCP_QMUXER_H__ */

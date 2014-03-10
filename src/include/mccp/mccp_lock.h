@@ -24,6 +24,9 @@ typedef struct mccp_barrier_record *	mccp_barrier_t;
 
 
 
+__BEGIN_DECLS
+
+
 mccp_result_t
 mccp_mutex_create(mccp_mutex_t *mtxptr);
 
@@ -134,6 +137,12 @@ mccp_barrier_destroy(mccp_barrier_t *bptr);
 
 mccp_result_t
 mccp_barrier_wait(mccp_barrier_t *bptr, bool *is_master);
+
+
+__END_DECLS
+
+
+
 
 
 #endif /* ! __MCCP_LOCK_H__ */

@@ -66,6 +66,10 @@ typedef mccp_result_t
 
 
 
+
+__BEGIN_DECLS
+
+
 /**
  * Create a thread.
  *
@@ -300,6 +304,9 @@ mccp_thread_module_initialize(void);
  */
 void
 mccp_thread_module_finalize(void);
+
+
+__END_DECLS
 
 
 

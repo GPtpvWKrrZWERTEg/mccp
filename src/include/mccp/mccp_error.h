@@ -53,6 +53,9 @@
 
 
 
+__BEGIN_DECLS
+
+
 /**
  * Get a human readable error message from an API result code.
  *
@@ -61,6 +64,9 @@
  *	@returns	A human readable error message.
  */
 const char *	mccp_error_get_string(mccp_result_t err);
+
+
+__END_DECLS
 
 
 

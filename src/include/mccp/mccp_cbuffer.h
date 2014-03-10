@@ -28,6 +28,9 @@ typedef void	(*mccp_cbuffer_value_freeup_proc_t)(void **valptr);
 
 
 
+__BEGIN_DECLS
+
+
 mccp_result_t
 mccp_cbuffer_create_with_size(mccp_cbuffer_t *cbptr,
                               size_t elemsize,
@@ -271,6 +274,9 @@ mccp_cbuffer_is_operational(mccp_cbuffer_t *cbptr, bool *retptr);
  */
 void
 mccp_cbuffer_cancel_janitor(mccp_cbuffer_t *cbptr);
+
+
+__END_DECLS
 
 
 

@@ -29,7 +29,7 @@ typedef enum {
 #define IS_VALID_MCCP_GLOBAL_STATE(s)                                \
   ((((int)(s) > (int)MCCP_GLOBAL_STATE_UNKNOWN) &&                   \
     ((int)(s) <= (int)MCCP_GLOBAL_STATE_FINALIZED)) ? true : false)
-#define IS_MCCP_GLOBAL_STATE_SHUTDOWN(s)                                     \
+#define IS_MCCP_GLOBAL_STATE_SHUTDOWN(s)                                \
   (((int)(s) >= (int)MCCP_GLOBAL_STATE_ACCEPT_SHUTDOWN) ? true : false)
 
 
@@ -44,6 +44,9 @@ typedef enum {
 
 
 
+
+
+__BEGIN_DECLS
 
 
 /**
@@ -132,7 +135,7 @@ mccp_global_state_wait_for(mccp_global_state_t s_wait_for,
  */
 mccp_result_t
 mccp_global_state_wait_for_shutdown_request(shutdown_grace_level_t *cur_gptr,
-    mccp_chrono_t nsec);
+                                            mccp_chrono_t nsec);
 
 
 /**
@@ -168,6 +171,9 @@ void	mccp_global_state_cancel_janitor(void);
  *	@details Use this only in the unit tests.
  */
 void	mccp_global_state_reset(void);
+
+
+__END_DECLS
 
 
 

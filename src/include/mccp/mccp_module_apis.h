@@ -145,6 +145,9 @@ typedef void
 
 
 
+__BEGIN_DECLS
+
+
 /**
  * Register a module.
  *
@@ -259,6 +262,9 @@ mccp_module_finalize_all(void);
  */
 mccp_result_t
 mccp_module_find(const char *name);
+
+
+__END_DECLS
 
 
 

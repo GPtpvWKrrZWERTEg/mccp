@@ -49,6 +49,9 @@ typedef void
 
 
 
+__BEGIN_DECLS
+
+
 /**
  * Set a value to an entry.
  *
@@ -474,6 +477,9 @@ mccp_hashmap_statistics(mccp_hashmap_t *hmptr,
  */
 void
 mccp_hashmap_atfork_child(mccp_hashmap_t *hmptr);
+
+
+__END_DECLS
 
 
 

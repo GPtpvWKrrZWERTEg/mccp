@@ -13,6 +13,9 @@
 
 
 
+__BEGIN_DECLS
+
+
 mccp_result_t
 mccp_str_tokenize(char *buf, char **tokens,
                   size_t max, const char *delm);
@@ -92,6 +95,9 @@ mccp_str_parse_long_double(const char *buf, long double *val);
 
 mccp_result_t
 mccp_str_parse_bool(const char *buf, bool *val);
+
+
+__END_DECLS
 
 
 

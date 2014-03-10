@@ -26,6 +26,9 @@ typedef int pthread_barrierattr_t;
 
 
 
+__BEGIN_DECLS
+
+
 int	clock_gettime(clockid_t clk_id, struct timespec *tp);
 
 int	pthread_barrier_init(pthread_barrier_t * restrict barrier,
@@ -43,6 +46,9 @@ pthread_rwlock_timedwrlock(pthread_rwlock_t *restrict rwlock,
 int
 pthread_rwlock_timedrdlock(pthread_rwlock_t *restrict rwlock,
                            const struct timespec *restrict abs_timeout);
+
+
+__END_DECLS
 
 
 

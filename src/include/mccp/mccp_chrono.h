@@ -13,6 +13,9 @@
 
 
 
+__BEGIN_DECLS
+
+
 mccp_chrono_t
 mccp_chrono_now(void);
 
@@ -40,6 +43,9 @@ mccp_chrono_from_timeval(mccp_chrono_t *dstptr,
 mccp_result_t
 mccp_chrono_nanosleep(mccp_chrono_t nsec,
                       mccp_chrono_t *remptr);
+
+
+__END_DECLS
 
 
 
